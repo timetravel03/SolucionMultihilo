@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8BAE20CA-32E7-4EA8-B4D7-2C6451A8D85E}</ProjectGuid>
+    <ProjectGuid>{860898AC-4770-4466-89EB-B01E4DAC96F5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Ejercicio6</RootNamespace>
-    <AssemblyName>Ejercicio6</AssemblyName>
+    <RootNamespace>Ejercicio7</RootNamespace>
+    <AssemblyName>Ejercicio7</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,7 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyTimer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

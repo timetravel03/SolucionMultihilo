@@ -25,7 +25,6 @@ namespace Ejercicio4
                     {
                         if (!win)
                         {
-
                             contador++;
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine(contador);
