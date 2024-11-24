@@ -20,6 +20,7 @@ namespace Ejercicio_5
         {
             Console.CursorVisible = false;
             contador = 1;
+            bool win = false;
             Object testigo = new Object();
             caballos = new Caballo[] { new Caballo("John", 1), new Caballo("Arthur", 2), new Caballo("Charles", 3), new Caballo("Sadie", 4), new Caballo("Dutch", 5) };
             hilos = new Thread[caballos.Length];
@@ -27,11 +28,15 @@ namespace Ejercicio_5
             Console.Clear();
             for (int i = 0; i < caballos.Length; i++)
             {
-                hilos[i] = new Thread(caballos[i].Correr);
+                int valor = i;
+                hilos[i] = new Thread(() =>
+                {
+                    caballos[valor].Correr(testigo, ref win);
+                });
             }
             for (int i = 0; i < hilos.Length; i++)
             {
-                hilos[i].Start(testigo);
+                hilos[i].Start();
             }
             for (int i = 0; i < hilos.Length; i++)
             {

@@ -35,15 +35,16 @@ namespace Ejercicio_5
             get { return tiempo; }
         }
 
-        public void Correr(Object testigo)
+        public void Correr(Object testigo, ref bool win)
         {
             //Console.SetCursorPosition(0, posicion);
             string[] anims = { "\"\u00a1==\u00a17·", "\"_==_7·" };
+            int i = 0;
             Random rn = new Random();
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
 
-            for (int i = 6; i < 50; i++)
+            while (!win)
             {
                 int tiempo_de_sleep = rn.Next(100);
                 lock (testigo)
@@ -73,9 +74,11 @@ namespace Ejercicio_5
                     if (i == 49)
                     {
                         Console.Write("Finish");
+                        win = true;
                         stopwatch.Stop();
                     }
                 }
+                i++;
                 Thread.Sleep(tiempo_de_sleep);
             }
             tiempo = stopwatch.Elapsed;
