@@ -49,33 +49,36 @@ namespace Ejercicio_5
                 int tiempo_de_sleep = rn.Next(100);
                 lock (testigo)
                 {
-                    Console.SetCursorPosition(0, posicion);
-                    Console.Write(nombre);
-
-                    Console.SetCursorPosition(i, posicion);
-
-                    // Borrado del frame anterior
-                    for (int j = 1; j <= 6; j++)
+                    if (!win)
                     {
+                        Console.SetCursorPosition(0, posicion);
+                        Console.Write(nombre);
+
                         Console.SetCursorPosition(i, posicion);
-                        Console.Write(new string(' ', 6));
-                    }
 
-                    if (i % 2 == 0)
-                    {
-                        Console.Write(anims[0]);
-                        Thread.Sleep(15);
-                    }
-                    else
-                    {
-                        Console.Write(anims[1]);
-                        Thread.Sleep(15);
-                    }
-                    if (i == 49)
-                    {
-                        Console.Write("Finish");
-                        win = true;
-                        stopwatch.Stop();
+                        // Borrado del frame anterior
+                        for (int j = 1; j <= 6; j++)
+                        {
+                            Console.SetCursorPosition(i, posicion);
+                            Console.Write(new string(' ', 6));
+                        }
+
+                        if (i % 2 == 0)
+                        {
+                            Console.Write(anims[0]);
+                            Thread.Sleep(15);
+                        }
+                        else
+                        {
+                            Console.Write(anims[1]);
+                            Thread.Sleep(15);
+                        }
+                        if (i == 49)
+                        {
+                            Console.Write("Finish");
+                            win = true;
+                            stopwatch.Stop();
+                        }
                     }
                 }
                 i++;

@@ -91,9 +91,9 @@ namespace Ejercicio_5
                 }
                 Console.WriteLine("Elije un caballo para apostar");
                 opcion = Console.ReadLine();
-                if (int.TryParse(opcion, out int parsed) && parsed < caballos.Length && parsed >= 0) // TODO acabar este if
+                if (int.TryParse(opcion, out int parsed) && parsed <= caballos.Length && parsed > 0)
                 {
-                    caballo_apuesta = parsed;
+                    caballo_apuesta = parsed - 1;
                     salir = true;
                 }
                 else
