@@ -18,7 +18,7 @@ namespace Ejercicio_5
 
         static void Main(string[] args)
         {
-            
+            Console.CursorVisible = false;
             contador = 1;
             Object testigo = new Object();
             caballos = new Caballo[] { new Caballo("John", 1), new Caballo("Arthur", 2), new Caballo("Charles", 3), new Caballo("Sadie", 4), new Caballo("Dutch", 5) };
@@ -62,7 +62,6 @@ namespace Ejercicio_5
                     Console.WriteLine();
                 }
             }
-            Console.ReadLine();
 
             if (caballo_apuesta == ganador)
             {
@@ -72,6 +71,7 @@ namespace Ejercicio_5
             {
                 Console.WriteLine("Has perdido");
             }
+            Console.ReadLine();
         }
 
         public static void Apostar()

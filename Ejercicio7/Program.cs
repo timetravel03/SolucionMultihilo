@@ -123,7 +123,7 @@ namespace Ejercicio7
                         }
                     }
                 }
-                Thread.Sleep(200);
+                Thread.Sleep(30);
                 if (c >= 3)
                 {
                     c = 0;
