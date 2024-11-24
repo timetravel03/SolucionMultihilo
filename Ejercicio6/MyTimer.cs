@@ -32,13 +32,16 @@ namespace Ejercicio6
             {
                 lock (testigo)
                 {
-                    if (!estaActivo)
+                    if (estaPausado)
                     {
                         Monitor.Wait(testigo);
                     }
-                    fun();
-                    Thread.Sleep(Interval);
+                    else
+                    {
+                        fun();
+                    }
                 }
+                Thread.Sleep(Interval);
             }
         }
 
@@ -49,11 +52,12 @@ namespace Ejercicio6
                 if (!estaActivo && !estaPausado)
                 {
                     hiloEjecucion.Start();
-                } else
+                    estaActivo = true;
+                }
+                else
                 {
                     Monitor.Pulse(testigo);
                 }
-                estaActivo = true;
                 estaPausado = false;
             }
         }
@@ -62,7 +66,6 @@ namespace Ejercicio6
         {
             lock (testigo)
             {
-                estaActivo = false;
                 estaPausado = true;
             }
         }

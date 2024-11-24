@@ -13,7 +13,7 @@ namespace Ejercicio8
         {
             Jugador p = new Jugador();
             Console.CursorVisible = false;
-            p.position = new int[] { 0, 20 };
+            p.Position = new int[] { 0, 30 };
 
             while (true)
             {

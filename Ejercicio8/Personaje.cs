@@ -9,7 +9,14 @@ namespace Ejercicio8
     internal abstract class Personaje
     {
         private int[] position;
-
+        public int[] Position
+        {
+            get { return position; }
+            set {
+                setX(value[0]);
+                setY(value[1]);
+            }
+        }
         
         public bool Alive { get; set; }
 
